@@ -10,12 +10,12 @@ export const ContactList = () => {
   const handleDelete = id => dispatch(deleteContact(id));
   const filterText = useSelector(state => state.filters.filterText);
 
-  const filteredContacts = contacts.filter(contact =>
+  const filteredContacts = contacts.items.filter(contact =>
     contact.name.toLowerCase().includes(filterText.toLowerCase())
   );
 
   if (filteredContacts.length === 0) {
-    return Notiflix.Notify.failiure('No contact was found please try again!');
+    return Notiflix.Notify.failure('No contact was found please try again!');
   }
   return (
     <ul className="contact-list">
@@ -41,3 +41,5 @@ export const ContactList = () => {
     </ul>
   );
 };
+
+console.log(ContactList);

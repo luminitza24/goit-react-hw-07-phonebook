@@ -13,7 +13,7 @@ export const Form = () => {
     const form = event.currentTarget;
     const contactName = form.elements.name.value;
     const contactNumber = form.elements.number.value;
-    const duplicate = contacts.find(
+    const duplicate = contacts.items.find(
       ({ name }) => name.toLowerCase() === contactName.toLowerCase()
     );
     if (duplicate) {
